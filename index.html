@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael John Franklin | System Core</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+    <div id="terminal-overlay">
+        <div class="terminal-header">
+            <span>TERMINAL - ROOT ACCESS</span>
+            <span>SECURE SHELL (SSH)</span>
+        </div>
+        <div class="terminal-body" id="terminal-text">
+            <div>> INITIALIZING HACK SEQUENCE...</div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo" onclick="logoEasterEgg()">Mikelokinz</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">What I Do</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="side-orientation side-left fade-in">
+        <ul class="social-list">
+            <li><a href="https://github.com/mikelokinz" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelokinz/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="mailto:mikelokinz@gmail.com"><i class="far fa-envelope"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="side-orientation side-right fade-in">
+        <div class="email-link-wrapper">
+            <a href="mailto:mikelokinz@gmail.com" class="email-link">mikelokinz@gmail.com</a>
+        </div>
+    </div>
+
+    <section id="hero" class="container">
+        <div class="fade-in">
+            <p class="hero-intro">Hi, my name is</p>
+        </div>
+        <div class="fade-in" style="transition-delay: 100ms;">
+            <h1 class="hero-name">Michael John Franklin.</h1>
+        </div>
+        <div class="fade-in" style="transition-delay: 200ms;">
+            <h2 class="hero-subtitle">I build things for the web.</h2>
+        </div>
+        <div class="fade-in" style="transition-delay: 300ms;">
+            <p class="hero-desc">
+                I am a B.E. Computer Science student based in Tiruvannamalai, India. 
+                I specialize in building responsive web applications using the MERN stack and possess a creative flair for video editing.
+            </p>
+        </div>
+        <div class="fade-in" style="transition-delay: 400ms;">
+            <a href="#projects" class="btn-main">Check out my projects!</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title fade-in"><span class="highlight">01.</span> About Me</h2>
+        <div class="about-grid fade-in">
+            <div class="about-text">
+                <p>
+                    Hello! My name is Michael and I enjoy creating things that live on the internet. 
+                    I am currently a student pursuing my <strong>B.E. in Computer Science and Engineering</strong> (2024-2028).
+                </p>
+                <br>
+                <p>
+                    I am a creative thinker who loves bridging the gap between design and engineering. 
+                    Whether it's writing clean React code or editing dynamic videos in After Effects, 
+                    I strive for perfection in every pixel.
+                </p>
+                <br>
+                <p>
+                    I am eager to contribute fresh ideas to a forward-thinking technical team.
+                </p>
+            </div>
+            <div class="profile-pic-wrapper">
+                <div class="profile-pic-placeholder">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2 class="section-title fade-in"><span class="highlight">02.</span> What I Do</h2>
+        <div class="services-grid fade-in">
+            <div class="service-card">
+                <i class="fas fa-code service-icon"></i>
+                <h3 class="service-title">Web Development</h3>
+                <p>Building responsive, fast, and scalable web applications using the latest technologies like Next.js and React.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h3 class="service-title">Mobile Dev</h3>
+                <p>Exploring cross-platform mobile application development using Flutter to bring ideas to handheld devices.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-video service-icon"></i>
+                <h3 class="service-title">Video Editing</h3>
+                <p>Creating engaging visual content and motion graphics using Adobe After Effects and Capcut.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2 class="section-title fade-in"><span class="highlight">03.</span> Technical Arsenal</h2>
+        <p class="fade-in" style="margin-bottom: 20px;">Technologies I've been working with recently:</p>
+        
+        <div class="skill-grid fade-in">
+            <div class="skill-tag">HTML5</div>
+            <div class="skill-tag">CSS3</div>
+            <div class="skill-tag">JavaScript (ES6+)</div>
+            <div class="skill-tag">React.js</div>
+            <div class="skill-tag">Next.js</div>
+            <div class="skill-tag">Tailwind CSS</div>
+            <div class="skill-tag">FastAPI</div>
+            <div class="skill-tag">MongoDB</div>
+            
+            <div class="skill-tag">Flutter (Basic)</div>
+            <div class="skill-tag">Git / GitHub</div>
+            <div class="skill-tag">VS Code</div>
+            
+            <div class="skill-tag" style="border-color: var(--accent-pink); color:var(--accent-pink);">After Effects</div>
+            <div class="skill-tag" style="border-color: var(--accent-pink); color:var(--accent-pink);">Capcut</div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title fade-in"><span class="highlight">04.</span> Some Things I've Built</h2>
+        <div class="project-grid">
+            
+            <div class="project-card fade-in">
+                <div>
+                    <i class="far fa-folder folder-icon"></i>
+                    <h3>AI Complaint System</h3>
+                    <p>An intelligent complaint and request management system. It uses AI to classify issues and automatically alerts authorities based on urgency level.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Next.js</li>
+                    <li>FastAPI</li>
+                    <li>MongoDB</li>
+                    <li>AI/ML</li>
+                </ul>
+            </div>
+
+            <div class="project-card fade-in" style="transition-delay: 100ms;">
+                <div>
+                    <i class="far fa-folder folder-icon"></i>
+                    <h3>Creative Portfolio</h3>
+                    <p>A personal showcase of my video editing and motion graphics work, utilizing Lottie files and complex text animations.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>After Effects</li>
+                    <li>Lottie</li>
+                    <li>Animation</li>
+                </ul>
+            </div>
+
+             <div class="project-card fade-in" style="transition-delay: 200ms;">
+                <div>
+                    <i class="far fa-folder folder-icon"></i>
+                    <h3>Honours App Project</h3>
+                    <p>Coursework project developed during my Honours Diploma in Computer Application (CSC).</p>
+                </div>
+                <ul class="project-tech">
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Database</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <h2 class="section-title fade-in"><span class="highlight">05.</span> Journey So Far</h2>
+        <div class="timeline fade-in">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - 2028 (Present)</div>
+                <div class="timeline-title">B.E. Computer Science & Engineering</div>
+                <div class="timeline-place">Current Student</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - 2025</div>
+                <div class="timeline-title">Honours Diploma in Computer Application</div>
+                <div class="timeline-place">CSC</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">May 2024</div>
+                <div class="timeline-title">Certifications</div>
+                <div class="timeline-place">Error Makes Clever</div>
+                <p style="font-size: 0.9rem; margin-top: 5px;">
+                    Completed "Master Flutter Webinar" and "Full Stack Web Development" courses.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Previous</div>
+                <div class="timeline-title">Higher Secondary</div>
+                <div class="timeline-place">Mount St. Joseph Mat. Hr. Sec. School</div>
+                <p style="font-size: 0.9rem; margin-top: 5px;">HSC (60%) | SSLC (69%)</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="text-align: center;">
+        <p class="highlight fade-in">06. What’s Next?</p>
+        <h2 class="hero-name fade-in" style="font-size: 3rem; margin-bottom: 20px;">Get In Touch</h2>
+        <p class="fade-in" style="max-width: 600px; margin: 0 auto 50px auto;">
+            I am currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!
+        </p>
+        
+        <div class="fade-in">
+            <a href="mailto:mikelokinz@gmail.com" class="btn-main">Say Hello</a>
+        </div>
+
+        <div class="fade-in" style="margin-top: 40px; font-family: var(--font-mono); font-size: 0.9rem;">
+            <p>
+                <a href="tel:+917904285263" style="color: var(--text-slate); text-decoration: none;">
+                    <i class="fas fa-phone-alt" style="color: var(--accent-green)"></i> +91 7904285263
+                </a>
+            </p>
+            <p style="margin-top: 10px;">
+                <a href="https://www.linkedin.com/in/mikelokinz/" target="_blank" style="color: var(--text-slate); text-decoration: none; margin-right: 15px;">
+                    <i class="fab fa-linkedin" style="color: var(--accent-green)"></i> mikelokinz
+                </a>
+                <a href="https://github.com/mikelokinz" target="_blank" style="color: var(--text-slate); text-decoration: none;">
+                    <i class="fab fa-github" style="color: var(--accent-green)"></i> mikelokinz
+                </a>
+            </p>
+        </div>
+
+        <div class="danger-wrapper fade-in">
+            <button class="btn-main btn-danger" onclick="triggerChaosMode()">
+                <i class="fas fa-radiation"></i> DO NOT PRESS
+            </button>
+            <p style="margin-top: 15px; font-size: 0.7rem; opacity: 0.6;">RESTRICTED ACCESS: AUTHORIZED PERSONNEL ONLY</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Mikelokinz... you can call me Mike</p>
+    </footer>
+
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
