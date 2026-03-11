@@ -14,9 +14,23 @@ const HeroPage = () => {
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   const [hoverPortrait, setHoverPortrait] = useState(false);
-  const { theme } = useTheme();
+  const touchTimer = React.useRef(null);
+  const { theme, changeTheme } = useTheme();
   const isGhost = theme === 'ghost';
   const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
+
+  const handleTouchStart = () => {
+    touchTimer.current = setTimeout(() => {
+      // Trigger Ghost mode glitch and theme toggle
+      document.documentElement.classList.add('ghost-glitch');
+      setTimeout(() => document.documentElement.classList.remove('ghost-glitch'), 900);
+      changeTheme(isGhost ? 'dark' : 'ghost');
+    }, 1200); // 1.2s hold
+  };
+
+  const handleTouchEnd = () => {
+    if (touchTimer.current) clearTimeout(touchTimer.current);
+  };
 
   return (
     <main style={{ minHeight: '100vh', overflow: 'hidden' }}>
@@ -41,7 +55,7 @@ const HeroPage = () => {
             {/* LEFT: Text */}
             <motion.div variants={item} style={{ zIndex: 1 }}>
               <motion.div variants={item}
-                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.875rem', letterSpacing: '0.15em', color: 'var(--neon-2)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.875rem', letterSpacing: '0.15em', color: 'var(--neon-2)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'inherit', gap: '0.75rem' }}
               >
                 <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: Infinity }}>▮</motion.span>
                 Hello, World — I'm
@@ -67,7 +81,7 @@ const HeroPage = () => {
               </motion.p>
 
               {/* CTAs */}
-              <motion.div variants={item} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
+              <motion.div variants={item} className="hero-cta-wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
                 <Link to="/work" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 2rem', borderRadius: 'var(--radius-md)', background: 'var(--neon-2)', color: '#000', fontWeight: 700, fontFamily: 'var(--font-heading)', fontSize: '0.95rem', transition: 'all var(--transition-fast)' }}
                   onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = `0 15px 30px ${personal.phone.length > 0 ? 'rgba(0, 212, 255, 0.35)' : '#0d0'}`; }}
                   onMouseOut={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
@@ -84,7 +98,7 @@ const HeroPage = () => {
               </motion.div>
 
               {/* Socials */}
-              <motion.div variants={item} style={{ display: 'flex', gap: '1.25rem' }}>
+              <motion.div variants={item} className="hero-socials-wrap" style={{ display: 'flex', gap: '1.25rem' }}>
                 {[
                   { icon: Github, href: personal.github, label: 'GitHub' },
                   { icon: Linkedin, href: personal.linkedin, label: 'LinkedIn' },
@@ -110,7 +124,10 @@ const HeroPage = () => {
               <div
                 onMouseEnter={() => setHoverPortrait(true)}
                 onMouseLeave={() => setHoverPortrait(false)}
-                style={{ position: 'relative', width: '320px', height: '320px' }}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onTouchCancel={handleTouchEnd}
+                style={{ position: 'relative', width: '300px', height: '300px', maxWidth: '80vw', maxHeight: '80vw' }}
               >
                 {/* Glow ring */}
                 <motion.div
@@ -217,12 +234,30 @@ const HeroPage = () => {
       </div>
 
       <style>{`
-        @media (min-width: 900px) {
-          .hero-grid { grid-template-columns: 1fr 1fr !important; }
-          .hero-portrait-wrap { display: flex !important; }
+        .hero-grid { 
+          grid-template-columns: 1fr; 
+          text-align: center;
         }
-        @media (max-width: 899px) {
-          .hero-portrait-wrap { display: none !important; }
+        .hero-grid p { margin-left: auto; margin-right: auto; }
+        .hero-portrait-wrap { 
+          order: -1; /* Display portrait above text on mobile */
+          margin-bottom: 2rem;
+        }
+        .hero-cta-wrap { justify-content: center; }
+        .hero-socials-wrap { justify-content: center; }
+        
+        @media (min-width: 900px) {
+          .hero-grid { 
+            grid-template-columns: 1fr 1fr !important; 
+            text-align: left;
+          }
+          .hero-grid p { margin-left: 0; }
+          .hero-portrait-wrap { 
+            order: 1; /* Portrait on right on desktop */
+            margin-bottom: 0;
+          }
+          .hero-cta-wrap { justify-content: flex-start; }
+          .hero-socials-wrap { justify-content: flex-start; }
         }
       `}</style>
     </main>

@@ -150,12 +150,20 @@ const WorkPage = () => {
       </div>
 
       <style>{`
+        .project-card { 
+          grid-template-columns: 1fr; /* Stack vertically by default */
+        }
+        .other-projects-grid { 
+          grid-template-columns: 1fr; /* Stack vertically by default */
+        }
+        
         @media (min-width: 768px) {
-          .project-card { grid-template-columns: 300px 1fr !important; }
+          .project-card { grid-template-columns: 340px 1fr !important; }
           .other-projects-grid { grid-template-columns: 1fr 1fr !important; }
         }
-        @media (max-width: 767px) {
-          .project-card { grid-template-columns: 1fr !important; }
+        
+        @media (min-width: 1024px) {
+          .project-card { grid-template-columns: 420px 1fr !important; }
         }
       `}</style>
     </main>

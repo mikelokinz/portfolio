@@ -7,9 +7,22 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayC
 const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.4,0,0.2,1] } } };
 
 const AboutPage = () => {
-  const { theme } = useTheme();
+  const { theme, changeTheme } = useTheme();
   const isGhost = theme === 'ghost';
   const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
+  const touchTimer = React.useRef(null);
+
+  const handleTouchStart = () => {
+    touchTimer.current = setTimeout(() => {
+      document.documentElement.classList.add('ghost-glitch');
+      setTimeout(() => document.documentElement.classList.remove('ghost-glitch'), 900);
+      changeTheme(isGhost ? 'dark' : 'ghost');
+    }, 1200); // 1.2s hold
+  };
+
+  const handleTouchEnd = () => {
+    if (touchTimer.current) clearTimeout(touchTimer.current);
+  };
 
   return (
   <main style={{ paddingTop: '100px', minHeight: '100vh' }}>
@@ -28,7 +41,12 @@ const AboutPage = () => {
           >
             <div style={{ position: 'relative', width: '280px' }}>
               {/* Glass frame */}
-              <div className="glass" style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', padding: 0 }}>
+              <div className="glass portrait-glass" 
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onTouchCancel={handleTouchEnd}
+                style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', padding: 0 }}
+              >
                 <img
                   src={portraitSrc}
                   alt={isGhost ? 'Simon Ghost Riley' : personal.name}
@@ -135,13 +153,29 @@ const AboutPage = () => {
       </section>
 
     </div>
-    <style>{`
-      @media (min-width: 768px) {
-        .about-grid { grid-template-columns: 1fr 1.8fr !important; }
-        .edu-grid { grid-template-columns: 1fr 1fr !important; }
-        .skills-grid { grid-template-columns: 1fr 1fr !important; }
-      }
-    `}</style>
+      <style>{`
+        .about-grid { grid-template-columns: 1fr; text-align: center; }
+        .about-grid p { margin-left: auto; margin-right: auto; }
+        .about-grid .section-label { text-align: center; }
+        .about-grid .section-title { text-align: center; }
+        .about-grid > div:last-child > div:last-child { justify-content: center; }
+        
+        .portrait-glass { cursor: pointer; } 
+        
+        .edu-grid { grid-template-columns: 1fr; }
+        .skills-grid { grid-template-columns: 1fr; }
+
+        @media (min-width: 900px) {
+          .about-grid { grid-template-columns: 1fr 1.8fr !important; text-align: left; }
+          .about-grid p { margin-left: 0; }
+          .about-grid .section-label { text-align: left; }
+          .about-grid .section-title { text-align: left; }
+          .about-grid > div:last-child > div:last-child { justify-content: flex-start; }
+          
+          .edu-grid { grid-template-columns: 1fr 1fr !important; }
+          .skills-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+      `}</style>
   </main>
   );
 };

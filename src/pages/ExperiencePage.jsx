@@ -127,6 +127,7 @@ const ExperiencePage = () => (
     </div>
 
     <style>{`
+      .cert-grid { grid-template-columns: 1fr; }
       @media (min-width: 768px) {
         .cert-grid { grid-template-columns: 1fr 1fr !important; }
       }
