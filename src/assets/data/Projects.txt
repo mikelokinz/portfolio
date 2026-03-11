@@ -1,0 +1,118 @@
+🎬 Just Built a Movie App! 🍿🚀
+
+Excited to share my newest project — a Movie Application built using React, Vite, and the TMDB API. This one was super fun to make and really helped me sharpen my API integration and UI design skills.
+
+✨ Features Included:
+ ▫️ Beautiful, responsive UI
+ ▫️ Search movies instantly
+ ▫️ Filter by categories/genres
+ ▫️ Movies neatly separated by categories
+ ▫️ Click to watch trailers directly
+ ▫️ Smooth and fast experience using Vite
+
+🛠️ Tech Stack:
+ React • Vite • Tailwind CSS • TMDB API • Vercel
+
+🔗 Live Demo (Vercel): https://movie-sigma-bay.vercel.app/
+
+
+This project pushed me to work with dynamic routes, API pagination, category handling, and media playback. Had a great time building it!
+
+
+📱 Samsung Website Clone — Completed! 🚀
+
+I’m excited to share my latest front-end project — a fully responsive clone of the Samsung website, built using React and Tailwind CSS.
+This project helped me practice modern UI/UX techniques and improve my component structure, responsive design, and layout skills.
+
+✨ What I Built:
+ ▫️ Pixel-perfect homepage layout inspired by Samsung
+ ▫️ Fully responsive design for all screen sizes
+ ▫️ Clean product sections, banners, and navigation
+ ▫️ Reusable React components
+ ▫️ Tailwind for fast and consistent styling
+
+🛠️ Tech Stack:
+ React • Tailwind CSS • Vite • Vercel
+
+🔗 Live Demo (Vercel): https://samsung-clone-gules.vercel.app/
+
+
+This was a fun challenge and definitely boosted my front-end development confidence. More clones & UI projects coming soon!
+
+
+✅ Just Built a Task Manager App! 🗂️✨
+
+Excited to share my new Task Manager Application built using React, Tailwind CSS, Vite, and deployed on Vercel. This project helped me dive deeper into state management, UI design, and browser-based storage.
+
+🔥 Features Included:
+ ▫️ Add, Edit, Delete tasks
+ ▫️ Stores data temporarily using localStorage
+ ▫️ Search tasks instantly
+ ▫️ Filter tasks by priority (High / Medium / Low)
+ ▫️ Clean, minimal UI with Tailwind
+ ▫️ Fast build + deploy workflow with Vite & Vercel
+
+🛠️ Tech Stack:
+ React • Vite • Tailwind CSS • LocalStorage • Vercel
+
+🔗 Live Demo (Vercel):https://task-manager-opal-ten.vercel.app/
+
+
+This project really improved my understanding of component design, local data persistence, and building user-friendly interfaces. Excited to add more features like drag-and-drop sorting or a dark mode next!
+
+
+🚀 Just Launched My Weather App! 🌤️
+
+I’m excited to share my latest project — a fully responsive Weather Application built with React (Vite), Tailwind CSS, and the OpenWeatherMap API, and deployed seamlessly on Vercel.
+
+✨ Features:
+ ▫️ Auto-detects current location weather
+ ▫️ Shows nearby location weather
+ ▫️ Search bar to look up any city
+ ▫️ Clean, modern UI built with Tailwind
+ ▫️ Super-fast performance thanks to Vite & Vercel
+
+🛠️ Tech Stack:
+ React • Vite • Tailwind CSS • OpenWeatherMap API • Verce
+l
+🔗 Live Demo (Vercel): https://weather-omega-blue-93.vercel.app/
+
+
+Building this helped me level up my API integration, state management, and responsive UI skills — and I’m excited to add more features soon!
+
+
+📍 TripAdvisor Clone – Mobile-Optimized Travel Explorer
+This is a responsive TripAdvisor clone built using pure HTML and CSS, designed to replicate the interactive, content-rich experience of the original platform.
+
+The clone includes:
+
+🔍 A responsive search bar with focus interaction
+
+🧭 Toggle-based dynamic heading system
+
+🏨 Sections for hotels, restaurants, flights, and rentals
+
+📱 Fully mobile-optimized layout (no horizontal scroll!)
+
+💡 Clean, modern UI with centered content
+
+❌ No JavaScript – 100% CSS-based interactivity
+
+All components are aligned perfectly with vertical flow and smooth navigation, delivering an excellent user experience on both desktop and mobile screens.
+
+🔗 Live Preview / Demo: https://mikelokinz.github.io/Tripadvisor/html/loading.html
+
+
+Just completed a dynamic, responsive course showcase site inspired by Udemy!
+
+Built using pure HTML and CSS — no frameworks, no media queries!
+Fully mobile-friendly with smooth hover transitions, card reveals, and custom UI styling.
+
+Great project to practice layout logic, responsiveness, and component design.
+
+Link - https://mikelokinz.github.io/udemy/html/page.html
+
+and two more projects 
+
+one is a e commerce website which sells gaming products named Lootish link-https://mikelokinz.github.io/Lootish/
+and other one is Jungo which sells games link - https://mikelokinz.github.io/Juego/
