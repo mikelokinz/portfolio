@@ -16,7 +16,7 @@ const HeroPage = () => {
   const [hoverPortrait, setHoverPortrait] = useState(false);
   const { theme } = useTheme();
   const isGhost = theme === 'ghost';
-  const portraitSrc = isGhost ? '/src/assets/images/Ghost.jpg' : personal.portrait;
+  const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
 
   return (
     <main style={{ minHeight: '100vh', overflow: 'hidden' }}>

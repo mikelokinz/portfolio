@@ -9,7 +9,7 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transi
 const AboutPage = () => {
   const { theme } = useTheme();
   const isGhost = theme === 'ghost';
-  const portraitSrc = isGhost ? '/src/assets/images/Ghost.jpg' : personal.portrait;
+  const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
 
   return (
   <main style={{ paddingTop: '100px', minHeight: '100vh' }}>

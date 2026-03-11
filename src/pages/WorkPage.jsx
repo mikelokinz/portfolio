@@ -67,7 +67,7 @@ const WorkPage = () => {
                   {/* Screenshot */}
                   <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', flexShrink: 0, border: '1px solid var(--glass-border)', position: 'relative' }}>
                     <motion.img
-                      src={`/src/assets/projects/previews/${project.id}.png`}
+                      src={`/projects/previews/${project.id}.png`}
                       alt={project.title}
                       style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }}
                       animate={{ scale: hovered === project.id ? 1.04 : 1 }}

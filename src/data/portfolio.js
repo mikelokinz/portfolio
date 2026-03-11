@@ -13,8 +13,8 @@ export const personal = {
   location: 'India',
   github: 'https://github.com/mikelokinz',
   linkedin: 'https://www.linkedin.com/in/mikelokinz/',
-  resume: '/src/assets/certifications/Resume.pdf',
-  portrait: '/src/assets/images/Portrait.jpg',
+  resume: '/certifications/Resume.pdf',
+  portrait: '/images/Portrait.jpg',
   about: [
     "I'm a motivated B.E. Computer Science student with a passion for building everything from Full Stack AI applications to high-performance frontend clones. I enjoy using AI to classify issues and auto-alert authorities based on urgency.",
     "My strengths lie in Creative Thinking, Team Collaboration, and rapid Front-End development. When I'm not pushing pixels or wrangling React state, you'll find me deep in Adobe After Effects crafting motion graphics.",
@@ -60,7 +60,7 @@ export const certifications = [
     issuer: 'Error Makes Clever (EMC)',
     date: 'May 2024',
     type: 'Certificate',
-    file: '/src/assets/certifications/EMC/Full Stack Certificate.pdf',
+    file: '/certifications/EMC/Full Stack Certificate.pdf',
     icon: '🚀',
   },
   {
@@ -68,7 +68,7 @@ export const certifications = [
     issuer: 'Error Makes Clever (EMC)',
     date: 'May 2024',
     type: 'Badge',
-    file: '/src/assets/certifications/EMC/Flutter{EMC}.jpg',
+    file: '/certifications/EMC/Flutter{EMC}.jpg',
     icon: '📱',
   },
   {
@@ -76,7 +76,7 @@ export const certifications = [
     issuer: 'CSC',
     date: '2024 – 2025',
     type: 'Diploma',
-    file: '/src/assets/certifications/CSC/CSC-HDCA (1).jpg',
+    file: '/certifications/CSC/CSC-HDCA (1).jpg',
     icon: '🎓',
   },
   {
@@ -84,7 +84,7 @@ export const certifications = [
     issuer: 'CISCO',
     date: '2025',
     type: 'Certificate',
-    file: '/src/assets/certifications/CISCO CYBER SECURITY.pdf',
+    file: '/certifications/CISCO CYBER SECURITY.pdf',
     icon: '🔒',
   },
   {
@@ -92,7 +92,7 @@ export const certifications = [
     issuer: 'MongoDB University',
     date: '2025',
     type: 'Certificate',
-    file: '/src/assets/certifications/Mongo DB/MongoDB.pdf',
+    file: '/certifications/Mongo DB/MongoDB.pdf',
     icon: '🍃',
   },
 ];
