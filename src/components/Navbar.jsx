@@ -79,8 +79,8 @@ const Navbar = () => {
                   background: isActive ? 'var(--glass-bg)' : 'transparent',
                   border: isActive ? '1px solid var(--glass-border)' : '1px solid transparent',
                 })}
-                onMouseOver={(e) => { e.currentTarget.style.color = 'var(--neon-2)'; }}
-                onMouseOut={(e) => { if (!e.currentTarget.className.includes('active')) e.currentTarget.style.color = 'var(--text-secondary)'; }}
+                onMouseOver={(e) => { if (window.matchMedia('(pointer: coarse)').matches) return; e.currentTarget.style.color = 'var(--neon-2)'; }}
+                onMouseOut={(e) => { if (window.matchMedia('(pointer: coarse)').matches) return; if (!e.currentTarget.className.includes('active')) e.currentTarget.style.color = 'var(--text-secondary)'; }}
               >
                 {link.label}
               </NavLink>

@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
   const CurrentIcon = currentTheme.icon;
 
   return (
-    <div style={{ position: 'fixed', top: '1.5rem', right: '1.5rem', zIndex: 50 }}>
+    <div style={{ position: 'relative' }}>
       <div style={{ position: 'relative' }}>
         <motion.button
           className="interactive"

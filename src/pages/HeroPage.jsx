@@ -18,6 +18,7 @@ const HeroPage = () => {
   const { theme, changeTheme } = useTheme();
   const isGhost = theme === 'ghost';
   const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
   const handleTouchStart = () => {
     touchTimer.current = setTimeout(() => {
@@ -83,15 +84,15 @@ const HeroPage = () => {
               {/* CTAs */}
               <motion.div variants={item} className="hero-cta-wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
                 <Link to="/work" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 2rem', borderRadius: 'var(--radius-md)', background: 'var(--neon-2)', color: '#000', fontWeight: 700, fontFamily: 'var(--font-heading)', fontSize: '0.95rem', transition: 'all var(--transition-fast)' }}
-                  onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = `0 15px 30px ${personal.phone.length > 0 ? 'rgba(0, 212, 255, 0.35)' : '#0d0'}`; }}
-                  onMouseOut={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
+                  onMouseOver={(e) => { if (isMobile) return; e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'; e.currentTarget.style.boxShadow = `0 15px 30px ${personal.phone.length > 0 ? 'rgba(0, 212, 255, 0.35)' : '#0d0'}`; }}
+                  onMouseOut={(e) => { if (isMobile) return; e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
                 >
                   View My Work <ArrowRight size={18} />
                 </Link>
                 <a href={personal.resume} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 2rem', borderRadius: 'var(--radius-md)', fontWeight: 600, fontFamily: 'var(--font-heading)', fontSize: '0.95rem', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', color: 'var(--text-primary)', backdropFilter: 'blur(10px)', transition: 'all var(--transition-fast)' }}
-                  onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--neon-2)'; e.currentTarget.style.color = 'var(--neon-2)'; }}
-                  onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+                  onMouseOver={(e) => { if (isMobile) return; e.currentTarget.style.borderColor = 'var(--neon-2)'; e.currentTarget.style.color = 'var(--neon-2)'; }}
+                  onMouseOut={(e) => { if (isMobile) return; e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                 >
                   <Download size={18} /> Resume
                 </a>
@@ -107,8 +108,8 @@ const HeroPage = () => {
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                     title={label}
                     style={{ color: 'var(--text-tertiary)', transition: 'all var(--transition-fast)' }}
-                    onMouseOver={(e) => { e.currentTarget.style.color = 'var(--neon-2)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-tertiary)'; e.currentTarget.style.transform = ''; }}
+                    onMouseOver={(e) => { if (isMobile) return; e.currentTarget.style.color = 'var(--neon-2)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+                    onMouseOut={(e) => { if (isMobile) return; e.currentTarget.style.color = 'var(--text-tertiary)'; e.currentTarget.style.transform = ''; }}
                   >
                     <Icon size={26} />
                   </a>
@@ -122,8 +123,8 @@ const HeroPage = () => {
               className="hero-portrait-wrap"
             >
               <div
-                onMouseEnter={() => setHoverPortrait(true)}
-                onMouseLeave={() => setHoverPortrait(false)}
+                onMouseEnter={() => !isMobile && setHoverPortrait(true)}
+                onMouseLeave={() => !isMobile && setHoverPortrait(false)}
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
                 onTouchCancel={handleTouchEnd}
@@ -167,7 +168,7 @@ const HeroPage = () => {
                     }}
                   >
                     <span style={{ fontSize: isGhost ? '1.4rem' : '3rem', fontFamily: isGhost ? 'var(--font-mono)' : 'inherit', color: isGhost ? '#4ade80' : 'inherit', letterSpacing: isGhost ? '0.05em' : 'normal', textShadow: isGhost ? '0 0 12px #4ade80' : 'none' }}>
-                      {isGhost ? 'Stay Frosty, soldier' : 'sup✌🏿'}
+                      {isGhost ? 'Stay Frosty,soldier' : 'sup✌🏿'}
                     </span>
                   </motion.div>
                 </motion.div>
