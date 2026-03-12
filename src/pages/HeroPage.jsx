@@ -128,6 +128,7 @@ const HeroPage = () => {
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
                 onTouchCancel={handleTouchEnd}
+                onTouchMove={handleTouchEnd}
                 style={{ position: 'relative', width: '300px', height: '300px', maxWidth: '80vw', maxHeight: '80vw' }}
               >
                 {/* Glow ring */}
@@ -154,7 +155,20 @@ const HeroPage = () => {
                   <img
                     src={portraitSrc}
                     alt={isGhost ? 'Simon Ghost Riley' : personal.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: isGhost ? 'center' : 'top', transition: 'opacity 0.5s ease, filter 0.5s ease', filter: isGhost ? 'contrast(1.1) brightness(0.9)' : 'none' }}
+                    draggable={false}
+                    onContextMenu={e => e.preventDefault()}
+                    style={{
+                      width: '100%', height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: isGhost ? 'center' : 'top',
+                      transition: 'opacity 0.5s ease, filter 0.5s ease',
+                      filter: isGhost ? 'contrast(1.1) brightness(0.9)' : 'none',
+                      // Block iOS Safari & Android long-press image menu
+                      WebkitTouchCallout: 'none',
+                      userSelect: 'none',
+                      WebkitUserSelect: 'none',
+                      pointerEvents: 'none',
+                    }}
                     onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(personal.name)}&size=320&background=020510&color=00d4ff&bold=true&font-size=0.35`; }}
                   />
                   {/* Hover overlay */}
