@@ -351,16 +351,25 @@ const ContactPage = () => {
 
         </div>
 
-        {/* Ghost hint */}
+        {/* Ghost hint — context-aware: mobile vs desktop */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
           style={{ textAlign: 'center', paddingBottom: '5rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)', fontSize: '0.8rem' }}>
-          <p>psst... try typing <span style={{ color: 'var(--neon-1)', letterSpacing: '0.2em' }}>GHOST</span></p>
+          <p className="ghost-hint-desktop">psst... try typing <span style={{ color: 'var(--neon-1)', letterSpacing: '0.2em' }}>GHOST</span></p>
+          <p className="ghost-hint-mobile">psst... try holding my <span style={{ color: 'var(--neon-1)' }}>profile img</span></p>
         </motion.div>
+        
       </div>
 
       <style>{`
         @media (min-width: 900px) {
           .contact-grid { grid-template-columns: 1fr 1.2fr !important; }
+        }
+        /* Ghost hint: show correct hint per device type */
+        .ghost-hint-mobile  { display: none; }
+        .ghost-hint-desktop { display: block; }
+        @media (pointer: coarse) {
+          .ghost-hint-desktop { display: none; }
+          .ghost-hint-mobile  { display: block; }
         }
       `}</style>
     </main>
