@@ -73,7 +73,7 @@ const Footer = () => {
       </p>
       <p style={{ opacity: 0.6 }}>
         {isMobile
-          ? <>Hold my <strong style={{ color: 'var(--neon-1)' }}>Profile image</strong> to unlock Ghost mode</>
+          ? <>Psst! Hold my <strong style={{ color: 'var(--neon-1)' }}>Profile image</strong></>
           : <>Try typing <strong style={{ color: 'var(--neon-1)' }}>GHOST</strong></>}
       </p>
     </footer>
