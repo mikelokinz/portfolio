@@ -34,7 +34,16 @@ const LiquidCursor = () => {
     }
   }, [theme]);
 
+  // Reliable touch/mobile detection: primary pointer is coarse (finger) OR no hover support
+  const isTouchDevice =
+    typeof window !== 'undefined' &&
+    (window.matchMedia('(hover: none) and (pointer: coarse)').matches ||
+      (navigator.maxTouchPoints > 0 && window.matchMedia('(hover: none)').matches));
+
   useEffect(() => {
+    // Skip all cursor listeners on touch/mobile devices
+    if (isTouchDevice) return;
+
     let trailX = -100, trailY = -100;
     let rafId = null;
 
@@ -98,10 +107,10 @@ const LiquidCursor = () => {
       window.removeEventListener('mouseover', onEnter);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isTouchDevice]);
 
-  // Don't render on touch-only devices
-  if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return null;
+  // Don't render on touch/mobile devices — only show on true pointer devices
+  if (isTouchDevice) return null;
 
   const color = THEME_COLORS[theme] || THEME_COLORS.dark;
 
