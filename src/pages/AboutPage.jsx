@@ -12,7 +12,8 @@ const AboutPage = () => {
   const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
   const touchTimer = React.useRef(null);
 
-  const handleTouchStart = () => {
+  const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent native long-press text selection / callout
     touchTimer.current = setTimeout(() => {
       document.documentElement.classList.add('ghost-glitch');
       setTimeout(() => document.documentElement.classList.remove('ghost-glitch'), 900);
@@ -45,7 +46,10 @@ const AboutPage = () => {
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
                 onTouchCancel={handleTouchEnd}
-                style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', padding: 0 }}
+                style={{
+                  borderRadius: 'var(--radius-xl)', overflow: 'hidden', padding: 0,
+                  userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none',
+                }}
               >
                 <img
                   src={portraitSrc}

@@ -20,7 +20,8 @@ const HeroPage = () => {
   const portraitSrc = isGhost ? '/images/Ghost.jpg' : personal.portrait;
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
-  const handleTouchStart = () => {
+  const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent native long-press text selection / callout
     touchTimer.current = setTimeout(() => {
       // Trigger Ghost mode glitch and theme toggle
       document.documentElement.classList.add('ghost-glitch');
@@ -129,7 +130,10 @@ const HeroPage = () => {
                 onTouchEnd={handleTouchEnd}
                 onTouchCancel={handleTouchEnd}
                 onTouchMove={handleTouchEnd}
-                style={{ position: 'relative', width: '300px', height: '300px', maxWidth: '80vw', maxHeight: '80vw' }}
+                style={{
+                  position: 'relative', width: '300px', height: '300px', maxWidth: '80vw', maxHeight: '80vw',
+                  userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none',
+                }}
               >
                 {/* Glow ring */}
                 <motion.div
