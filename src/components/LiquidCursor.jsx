@@ -24,9 +24,8 @@ const LiquidCursor = () => {
   // ── Step 1: detect after mount (runs in the real browser, never on server) ──
   useEffect(() => {
     const isTouch =
-      navigator.maxTouchPoints > 0 ||
       window.matchMedia('(pointer: coarse)').matches ||
-      window.matchMedia('(hover: none)').matches;
+      (navigator.maxTouchPoints > 0 && !window.matchMedia('(pointer: fine)').matches);
 
     if (!isTouch) setShow(true);
   }, []);
